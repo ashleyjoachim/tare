@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding"
+    tools:context="com.tare.tare.SignUp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/create_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/create_account"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    <GridLayout
+        android:id="@+id/fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/create_account"
+        android:columnCount="2"
+        android:columnOrderPreserved="true"
+        android:orientation="horizontal"
+        android:rowCount="6"
+        android:rowOrderPreserved="true">
+
+        <TextView
+            android:id="@+id/first_name"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/first_name"
+            android:textSize="@dimen/field_text_size" />
+
+        <EditText
+            android:id="@+id/enter_firstname"
+            android:layout_gravity="fill_horizontal"
+            android:hint="Luke"
+            android:textSize="@dimen/field_text_size" />
+
+        <TextView
+            android:id="@+id/last_name"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/last_name"
+            android:textSize="@dimen/field_text_size" />
+
+        <EditText
+            android:id="@+id/enter_lastname"
+            android:layout_column="1"
+            android:layout_gravity="fill_horizontal"
+            android:hint="Skywalker"
+            android:textSize="@dimen/field_text_size" />
+
+        <TextView
+            android:id="@+id/zip_code"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/zip_code"
+            android:textSize="@dimen/field_text_size" />
+
+        <EditText
+            android:id="@+id/zip_code_entry"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/zip_code"
+            android:inputType="number"
+            android:textSize="@dimen/field_text_size" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/email"
+            android:textSize="@dimen/field_text_size" />
+
+        <EditText
+            android:id="@+id/enter_email"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/field_text_size" />
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/password"
+            android:textSize="@dimen/field_text_size" />
+
+        <EditText
+            android:id="@+id/password_entry"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textSize="@dimen/field_text_size" />
+
+        <TextView
+            android:id="@+id/confirm_password"
+            android:layout_gravity="fill_horizontal"
+            android:text="@string/confirm_password"
+            android:textSize="@dimen/field_text_size" />
+
+        <EditText
+            android:id="@+id/confirm_password_entry"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:textSize="@dimen/field_text_size" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fields"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/terms_part_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="4dp"
+            android:text="I agree to Tare"
+            android:textSize="@dimen/terms_text_size" />
+
+        <TextView
+            android:id="@+id/terms_part_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:linksClickable="true"
+            android:paddingEnd="4dp"
+            android:text="Terms of Service"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/terms_text_size" />
+
+        <TextView
+            android:id="@+id/terms_part_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="4dp"
+            android:text="and"
+            android:textColor="#000000"
+            android:textSize="@dimen/terms_text_size" />
+
+        <TextView
+            android:id="@+id/terms_part_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:linksClickable="true"
+            android:paddingEnd="4dp"
+            android:text="Privacy Policy"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/terms_text_size" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/create_account_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/terms"
+        android:background="@color/colorAccent"
+        android:text="@string/create_account"
+        android:textColor="@color/white" />
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding"
+    tools:context="com.tare.tare.Home">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/welcome_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:text="Hi, User!"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    <GridLayout
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome_name"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/layout_padding">
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/protein_progress" />
+
+        <TextView android:id="@+id/protein_target" />
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/carbs_progress" />
+
+        <TextView android:id="@+id/carbs_target" />
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/fat_progress" />
+
+        <TextView android:id="@+id/fat_target" />
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/fiber_progress" />
+
+        <TextView android:id="@+id/fiber_target" />
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/sync_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/layout_padding">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:background="@color/colorAccent"
+            android:text="Sync"
+            android:textColor="@color/white" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:background="@color/colorAccent"
+            android:text="Edit"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/upcoming_meals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sync_edit"
+        android:text="Upcoming Meals"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    <FrameLayout
+        android:id="@+id/upcoming_meals_breakdown"
+        android:layout_below="@id/upcoming_meals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upcoming_meals_breakdown"
+        android:layout_centerInParent="true"
+        android:background="@color/colorAccent"
+        android:text="Order"
+        android:textColor="@color/white" />
+</RelativeLayout>

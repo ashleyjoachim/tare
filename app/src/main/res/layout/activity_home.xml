@@ -24,28 +24,97 @@
 
     <GridLayout
         android:id="@+id/progress"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/welcome_name"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
+        android:columnCount="4"
         android:orientation="horizontal"
-        android:padding="@dimen/layout_padding">
+        android:padding="@dimen/layout_padding"
+        android:rowCount="2">
 
-        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/protein_progress" />
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/protein_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:indeterminate="true" />
 
-        <TextView android:id="@+id/protein_target" />
+        <TextView
+            android:id="@+id/protein_target"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:indeterminate="true"
+            android:text="Protein" />
 
-        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/carbs_progress" />
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/carbs_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:indeterminate="true" />
 
-        <TextView android:id="@+id/carbs_target" />
+        <TextView
+            android:id="@+id/carbs_target"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:indeterminate="true"
+            android:text="Carbs" />
 
-        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/fat_progress" />
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/fat_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:indeterminate="true" />
 
-        <TextView android:id="@+id/fat_target" />
+        <TextView
+            android:id="@+id/fat_target"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:text="Fat" />
 
-        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/fiber_progress" />
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/fiber_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:indeterminate="true" />
 
-        <TextView android:id="@+id/fiber_target" />
+        <TextView
+            android:id="@+id/fiber_target"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:text="Fiber" />
     </GridLayout>
 
     <LinearLayout
@@ -82,13 +151,265 @@
         android:text="Upcoming Meals"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/upcoming_meals_breakdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/upcoming_meals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/breakfast_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/breakfast_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/breakfast_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Breakfast"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                    <ImageView
+                        android:id="@+id/breakfast_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/breakfast_title"
+                        android:background="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/breakfast_protein_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/breakfast_image"
+                        android:text="Protein: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/breakfast_carb_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/breakfast_protein_content"
+                        android:text="Carb: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/Breakfast_fat_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/breakfast_carb_content"
+                        android:text="Fat: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/breakfast_fibre_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/Breakfast_fat_content"
+                        android:text="Fibre: "
+                        android:textSize="@dimen/terms_text_size" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/lunch_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/lunch_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/lunch_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lunch"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                    <ImageView
+                        android:id="@+id/lunch_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lunch_title"
+                        android:background="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/lunch_protein_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lunch_image"
+                        android:text="Protein: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/lunch_carb_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lunch_protein_content"
+                        android:text="Carb: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/lunch_fat_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lunch_carb_content"
+                        android:text="Fat: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/lunch_fibre_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lunch_fat_content"
+                        android:text="Fibre: "
+                        android:textSize="@dimen/terms_text_size" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dinner_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/dinner_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/dinner_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dinner"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                    <ImageView
+                        android:id="@+id/dinner_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dinner_title"
+                        android:background="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/dinner_protein_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dinner_image"
+                        android:text="Protein: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/dinner_carb_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dinner_protein_content"
+                        android:text="Carb: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/dinner_fat_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dinner_carb_content"
+                        android:text="Fat: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/dinner_fibre_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dinner_fat_content"
+                        android:text="Fibre: "
+                        android:textSize="@dimen/terms_text_size" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/totals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/totals_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fab_margin">
+
+                    <TextView
+
+                        android:id="@+id/totals_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Totals"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                    <TextView
+                        android:id="@+id/total_protein_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/totals_title"
+                        android:text="Protein: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/total_carb_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/total_protein_content"
+                        android:text="Carb: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/total_fat_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/total_carb_content"
+                        android:text="Fat: "
+                        android:textSize="@dimen/terms_text_size" />
+
+                    <TextView
+                        android:id="@+id/total_fibre_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/total_fat_content"
+                        android:text="Fibre: "
+                        android:textSize="@dimen/terms_text_size" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/order"

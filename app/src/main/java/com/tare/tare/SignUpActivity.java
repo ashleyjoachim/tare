@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,11 +24,13 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SignUp extends AppCompatActivity implements View.OnClickListener {
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.create_account_button)
     Button createAccount;
     @BindView(R.id.terms_part_one)
     CheckBox termsAndConditions;
+    @BindView(R.id.terms_part_four)
+    TextView termsEnd;
     @BindView(R.id.enter_firstname)
     EditText firstNameEntry;
     @BindView(R.id.enter_lastname)
@@ -52,18 +55,18 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
         createAccount.setOnClickListener(this);
-        if (termsAndConditions.isChecked()) {
-            createAccount.setEnabled(false);
-        } else {
-            createAccount.setEnabled(true);
-        }
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.create_account_button:
-                registerUser();
+                if (termsAndConditions.isChecked()) {
+                    registerUser();
+                } else {
+                    termsEnd.setError("Complete all required fields");
+                    termsEnd.requestFocus();
+                }
                 break;
         }
     }
@@ -134,8 +137,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         Toast.makeText(getApplicationContext(), "Authentication Successful.", Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        Intent homeScreen = new Intent(SignUp.this, Home.class);
+                        Intent homeScreen = new Intent(SignUpActivity.this, ProfileActivity.class);
                         startActivity(homeScreen);
+                        homeScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //                    updateUI(user);
                     } else {
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {

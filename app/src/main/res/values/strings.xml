@@ -12,4 +12,6 @@
     <string name="email">Email</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="zip_code">Zip Code</string>
+    <string name="facebook_app_id">1989019401349840</string>
+    <string name="fb_login_protocol_scheme">fb1989019401349840</string>
 </resources>

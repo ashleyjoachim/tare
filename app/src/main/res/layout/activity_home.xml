@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.tare.tare.Home">
+    tools:context="com.tare.tare.HomeActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
         android:text="Hi, User!"
+        android:layout_marginStart="@dimen/fab_margin"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <GridLayout
@@ -144,6 +145,7 @@
     </LinearLayout>
 
     <TextView
+        android:layout_marginStart="@dimen/fab_margin"
         android:id="@+id/upcoming_meals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,17 +153,24 @@
         android:text="Upcoming Meals"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-    <LinearLayout
+    <GridLayout
         android:id="@+id/upcoming_meals_breakdown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/upcoming_meals"
-        android:orientation="horizontal">
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="1">
 
         <FrameLayout
             android:id="@+id/breakfast_frame"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/breakfast_cardview"
@@ -225,7 +234,12 @@
         <FrameLayout
             android:id="@+id/lunch_frame"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/lunch_cardview"
@@ -289,7 +303,12 @@
         <FrameLayout
             android:id="@+id/dinner_frame"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/dinner_cardview"
@@ -354,7 +373,12 @@
         <FrameLayout
             android:id="@+id/totals"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_row="0"
+            android:layout_rowWeight="1">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/totals_cardview"
@@ -409,9 +433,10 @@
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </FrameLayout>
-    </LinearLayout>
+    </GridLayout>
 
     <Button
+        android:layout_marginTop="15dp"
         android:id="@+id/order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -419,5 +444,17 @@
         android:layout_centerInParent="true"
         android:background="@color/colorAccent"
         android:text="Order"
+        android:textColor="@color/white" />
+
+    <Button
+
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/com_facebook_blue"
+        android:text="Logout"
         android:textColor="@color/white" />
 </RelativeLayout>

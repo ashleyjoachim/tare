@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:padding="@dimen/layout_padding"
     tools:context="com.tare.tare.Login">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:background="@mipmap/ic_launcher"
+        android:background="@drawable/titlebar"
         android:padding="@dimen/layout_padding" />
 
     <GridLayout
@@ -29,27 +29,27 @@
         android:rowOrderPreserved="true">
 
         <TextView
-            android:id="@+id/user"
+            android:id="@+id/login_email"
             android:layout_gravity="fill_horizontal"
-            android:text="@string/username"
+            android:text="@string/email"
             android:textSize="@dimen/field_text_size" />
 
         <EditText
-            android:id="@+id/user_entry"
+            android:id="@+id/login_email_entry"
             android:layout_gravity="fill_horizontal"
-            android:hint="@string/username"
-            android:inputType="text"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:textSize="@dimen/field_text_size" />
 
 
         <TextView
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:layout_gravity="fill_horizontal"
             android:text="@string/password"
             android:textSize="@dimen/field_text_size" />
 
         <EditText
-            android:id="@+id/password_entry"
+            android:id="@+id/login_password_entry"
             android:layout_gravity="fill_horizontal"
             android:hint="@string/password"
             android:inputType="textPassword"
@@ -58,9 +58,11 @@
 
 
     <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/remember_me_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/fields"
+        android:layout_marginStart="@dimen/fab_margin"
         android:text="@string/remember_me"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
@@ -75,12 +77,14 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/forgot_password"
         android:layout_centerInParent="true"
-        android:background="@color/colorAccent"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:background="@color/mintDark"
         android:padding="@dimen/layout_padding"
         android:text="@string/login"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -90,7 +94,7 @@
         android:id="@+id/create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login"
+        android:layout_below="@+id/login_button"
         android:layout_centerInParent="true"
         android:background="@android:color/transparent"
         android:padding="@dimen/layout_padding"
@@ -131,4 +135,11 @@
             android:text="@string/support_email"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 </RelativeLayout>

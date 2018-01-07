@@ -4,7 +4,6 @@
     <string name="support_email">support@tare.com</string>
     <string name="remember_me">Remember Me</string>
     <string name="password">Password</string>
-    <string name="username">Username</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="login">Login</string>
     <string name="create_account">Create Account</string>

@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/layout_padding"
+    android:background="@color/white"
     tools:context="com.tare.tare.Home">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:background="@mipmap/ic_launcher" />
+        android:background="@drawable/titlebar" />
 
     <TextView
         android:id="@+id/welcome_name"
